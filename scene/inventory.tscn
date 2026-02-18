@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://fti33pbtfm68"]
+
+[ext_resource type="Script" uid="uid://8sj4wx78m47r" path="res://cs/Inventory.cs" id="1_nbguh"]
+
+[node name="Inventory" type="GridContainer" unique_id=216559531]
+columns = 6
+script = ExtResource("1_nbguh")

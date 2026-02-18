@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bopehtichw70v"]
+
+[ext_resource type="PackedScene" uid="uid://fti33pbtfm68" path="res://scene/inventory.tscn" id="1_y5cld"]
+[ext_resource type="Script" uid="uid://d2vkqqhfhll7w" path="res://cs/GridShape.cs" id="2_y5cld"]
+
+[sub_resource type="Resource" id="Resource_hqkv2"]
+script = ExtResource("2_y5cld")
+GridShapeData = PackedInt32Array(7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+metadata/_custom_type_script = "uid://d2vkqqhfhll7w"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjq7e"]
+bg_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj4wp"]
+bg_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7fbx"]
+bg_color = Color(0.26421493, 0.4679216, 0.07948225, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.39146733, 0.68360513, 0.12018756, 0.99607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s26uq"]
+bg_color = Color(0.6509804, 0.43137255, 0.1254902, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8784314, 0.627451, 0.21568628, 0.89411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi5sy"]
+bg_color = Color(0.8862745, 0.2, 0.050980393, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95686275, 0.1882353, 0.18039216, 0.89411765)
+
+[node name="Control" type="Control" unique_id=1713762633]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1917568312]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25, 0.164, 0.13, 1)
+
+[node name="Inventory" parent="." unique_id=216559531 node_paths=PackedStringArray("Pos1", "Pos2", "Pos3") instance=ExtResource("1_y5cld")]
+layout_mode = 0
+GridShape = SubResource("Resource_hqkv2")
+CellColor = Color(1, 1, 1, 1)
+DisabledCellColor = Color(0.5365079, 0.7405148, 0.7397031, 1)
+SlotEmptyStyle = SubResource("StyleBoxFlat_gjq7e")
+SlotFullStyle = SubResource("StyleBoxFlat_rj4wp")
+SlotHoveredStylePositive = SubResource("StyleBoxFlat_w7fbx")
+SlotHoveredStyleNeutral = SubResource("StyleBoxFlat_s26uq")
+SlotHoveredStyleNegative = SubResource("StyleBoxFlat_gi5sy")
+Pos1 = NodePath("../Label")
+Pos2 = NodePath("../Label2")
+Pos3 = NodePath("../Label3")
+
+[node name="Label" type="Label" parent="." unique_id=1726771251]
+visible = false
+layout_mode = 0
+offset_left = 174.0
+offset_top = 5.0
+offset_right = 229.0
+offset_bottom = 28.0
+text = "asdasd"
+
+[node name="Label2" type="Label" parent="." unique_id=522848208]
+visible = false
+layout_mode = 0
+offset_left = 206.0
+offset_top = 39.0
+offset_right = 261.0
+offset_bottom = 62.0
+text = "sadasd"
+
+[node name="Label3" type="Label" parent="." unique_id=2026751936]
+visible = false
+layout_mode = 0
+offset_left = 261.0
+offset_top = 13.0
+offset_right = 316.0
+offset_bottom = 36.0
+text = "sadasd"

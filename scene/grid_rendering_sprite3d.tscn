@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d3oeybpf2x80w"]
+
+[ext_resource type="Script" uid="uid://cyquqssk263tq" path="res://cs/GridRendering.cs" id="1_4mfi8"]
+[ext_resource type="PackedScene" uid="uid://bopehtichw70v" path="res://scene/inventory_3d_test.tscn" id="2_8o6n8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jh12v"]
+
+[sub_resource type="Sky" id="Sky_761ye"]
+sky_material = SubResource("ProceduralSkyMaterial_jh12v")
+
+[sub_resource type="Environment" id="Environment_wmxll"]
+background_mode = 2
+sky = SubResource("Sky_761ye")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh12v"]
+albedo_color = Color(0.41568628, 0.6627451, 0.6784314, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4mfi8"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="GridRendering" type="Node3D" unique_id=1401515893 node_paths=PackedStringArray("HudControl")]
+script = ExtResource("1_4mfi8")
+HudControl = NodePath("Sprite3D/SubViewport/Control")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=498569785]
+environment = SubResource("Environment_wmxll")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=590733130]
+transform = Transform3D(1, 0, 0, 0, 0.8898388, 0.456275, 0, -0.456275, 0.8898388, 0, 12.641275, 11.570623)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2102480034]
+transform = Transform3D(0.28278637, 0.6086048, -0.7413718, -0.46722358, 0.76242524, 0.44767168, 0.8376957, 0.21979092, 0.49995795, -56.87829, 44.224697, 40.21603)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1725733736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1577759, 0.57421875, -5.7528076)
+use_collision = true
+size = Vector3(64.423706, 2.1484375, 68.83667)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=356031805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.550697, 8.166138, -15.006002)
+use_collision = true
+radius = 5.975
+height = 19.783
+sides = 16
+material = SubResource("StandardMaterial3D_jh12v")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=907848279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6244047, 5.9471636, -13.471128)
+use_collision = true
+radius = 5.415
+height = 9.627
+sides = 16
+material = SubResource("StandardMaterial3D_jh12v")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1317821484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6705084, 1.6199493, -5.9419384)
+use_collision = true
+radius = 5.415
+height = 9.627
+sides = 16
+material = SubResource("StandardMaterial3D_jh12v")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=437440376]
+transform = Transform3D(1, 0, 0, 0, 0.8540051, 0.52026457, 0, -0.52026457, 0.8540051, 0.39963484, 9.19562, 4.523832)
+pixel_size = 0.02
+double_sided = false
+texture_filter = 2
+texture = SubResource("ViewportTexture_4mfi8")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=877260682]
+
+[node name="Control" parent="Sprite3D/SubViewport" unique_id=1713762633 instance=ExtResource("2_8o6n8")]

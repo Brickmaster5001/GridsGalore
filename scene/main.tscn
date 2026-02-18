@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cy005fht1ssv2"]
+
+[ext_resource type="PackedScene" uid="uid://fti33pbtfm68" path="res://scene/inventory.tscn" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://c5qqndythso20" path="res://cs/InventoryFrame.cs" id="1_v0l8b"]
+[ext_resource type="Resource" uid="uid://chvco6l8ip7wy" path="res://res/new_resource.tres" id="3_wp4xf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0l8b"]
+bg_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp4xf"]
+bg_color = Color(0.19215687, 0.13333334, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brvut"]
+bg_color = Color(0.26421493, 0.4679216, 0.07948225, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.39146733, 0.68360513, 0.12018756, 0.99607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ha60"]
+bg_color = Color(0.6509804, 0.43137255, 0.1254902, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8784314, 0.627451, 0.21568628, 0.89411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j5ol"]
+bg_color = Color(0.8862745, 0.2, 0.050980393, 0.6392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95686275, 0.1882353, 0.18039216, 0.89411765)
+
+[node name="Node2D" type="Node2D" unique_id=1596871405]
+
+[node name="InventoryFrame" type="Control" parent="." unique_id=1995872545 node_paths=PackedStringArray("Inventories")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_v0l8b")
+Inventories = []
+metadata/_custom_type_script = "uid://dsw4h8inaah1"
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryFrame" unique_id=477029760]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Inventory" parent="InventoryFrame/MarginContainer" unique_id=216559531 node_paths=PackedStringArray("Pos1", "Pos2", "Pos3") instance=ExtResource("1_itxqv")]
+layout_mode = 2
+GridShape = ExtResource("3_wp4xf")
+CellWidth = 64
+CellHeight = 64
+CellColor = Color(1, 1, 1, 1)
+DisabledCellColor = Color(0.5365079, 0.7405148, 0.7397031, 1)
+SlotEmptyStyle = SubResource("StyleBoxFlat_v0l8b")
+SlotFullStyle = SubResource("StyleBoxFlat_wp4xf")
+SlotHoveredStylePositive = SubResource("StyleBoxFlat_brvut")
+SlotHoveredStyleNeutral = SubResource("StyleBoxFlat_0ha60")
+SlotHoveredStyleNegative = SubResource("StyleBoxFlat_4j5ol")
+Pos1 = NodePath("../../../Label")
+Pos2 = NodePath("../../../Label2")
+Pos3 = NodePath("../../../Label3")
+
+[node name="Label" type="Label" parent="." unique_id=1670092346]
+offset_left = 174.0
+offset_top = 5.0
+offset_right = 229.0
+offset_bottom = 28.0
+text = "asdasd"
+
+[node name="Label2" type="Label" parent="." unique_id=2119139320]
+offset_left = 173.0
+offset_top = 27.0
+offset_right = 228.0
+offset_bottom = 50.0
+text = "sadasd"
+
+[node name="Label3" type="Label" parent="." unique_id=423753168]
+offset_left = 183.0
+offset_top = 609.0
+offset_right = 238.0
+offset_bottom = 632.0
+text = "sadasd"

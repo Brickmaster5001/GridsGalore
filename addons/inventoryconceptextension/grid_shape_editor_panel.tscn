@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cedtlcrjnmmv5"]
+
+[ext_resource type="Script" uid="uid://d07v6fd1ld8wx" path="res://addons/inventoryconceptextension/GridShapeEditorPanel.cs" id="1_vrdfc"]
+[ext_resource type="Theme" uid="uid://diac6cmvpx6m1" path="res://addons/inventoryconceptextension/button_theme.tres" id="2_7rml3"]
+[ext_resource type="Texture2D" uid="uid://duodv6lufjegg" path="res://addons/inventoryconceptextension/Bucket.svg" id="3_prfqa"]
+[ext_resource type="Texture2D" uid="uid://cuifplrf065ui" path="res://addons/inventoryconceptextension/Clear.svg" id="4_fq2d3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rhy7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhy7a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="GridShapeEditorPanel" type="PanelContainer" unique_id=104267598 node_paths=PackedStringArray("GridContainer", "HeightSlider", "WidthSlider", "GridScroll", "ClearButton", "FillButton")]
+custom_minimum_size = Vector2(250, 350)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vrdfc")
+GridButtonTheme = ExtResource("2_7rml3")
+GridContainer = NodePath("MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/GridContainer")
+HeightSlider = NodePath("MarginContainer/VBoxContainer/HBoxContainer/HeightSlider")
+WidthSlider = NodePath("MarginContainer/VBoxContainer/HBoxContainer/WidthSlider")
+GridScroll = NodePath("MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer")
+ClearButton = NodePath("MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/ClearButton")
+FillButton = NodePath("MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/FillButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1895721136]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1483966433]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1147866184]
+layout_mode = 2
+alignment = 1
+
+[node name="HeightSlider" type="EditorSpinSlider" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1802182273]
+material = SubResource("CanvasItemMaterial_rhy7a")
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 32.0
+value = 1.0
+rounded = true
+label = "Height"
+editing_integer = true
+
+[node name="WidthSlider" type="EditorSpinSlider" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1897473067]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 32.0
+value = 1.0
+rounded = true
+label = "Width"
+editing_integer = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1438318198]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhy7a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1626223573]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=114634976]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer" unique_id=75718670]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=440563251]
+layout_mode = 2
+
+[node name="FillButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=164067267]
+layout_mode = 2
+theme_override_icons/icon = ExtResource("3_prfqa")
+
+[node name="ClearButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=905431956]
+layout_mode = 2
+icon = ExtResource("4_fq2d3")

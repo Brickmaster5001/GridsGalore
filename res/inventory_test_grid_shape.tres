@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GridShape" format=3 uid="uid://vrtfmmey4juw"]
+
+[ext_resource type="Script" uid="uid://d2vkqqhfhll7w" path="res://cs/GridShape.cs" id="1_1tsat"]
+
+[resource]
+script = ExtResource("1_1tsat")
+GridShapeData = PackedInt32Array(7, 9, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0)
+metadata/_custom_type_script = "uid://d2vkqqhfhll7w"
